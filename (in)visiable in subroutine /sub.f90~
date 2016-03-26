@@ -1,0 +1,20 @@
+module sub
+contains
+  subroutine visiable(a)
+    integer, intent(inout)::  a
+    call add(a, 2)
+    print*,"Final result is", times(a,4)
+  end subroutine visiable
+
+  subroutine add(a,b)
+    integer, intent(inout) :: a,b
+    a=a+b
+  end subroutine add
+
+  integer function times(a,b)
+    integer, intent(inout) :: a,b
+    times=a*b
+  end function times
+
+end module sub
+    
