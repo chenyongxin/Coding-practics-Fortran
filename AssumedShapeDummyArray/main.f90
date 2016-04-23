@@ -8,7 +8,7 @@ program main
   call process(a,b)
   print*,b
 
-
+ 
 
 
 contains
@@ -18,6 +18,7 @@ contains
     integer,intent(out):: data2(:)
     data2=(/1,2,3/)
     data2=2*data1
+    
     print*, 'Size of b is', size(b)
   end subroutine process
 end program main
