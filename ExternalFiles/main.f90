@@ -8,5 +8,8 @@ program main
   print*, degreetoradian(30.)
   print*, radiantodegree(2.)
   print*, mysin(30.)
+  call getSum
+  call getSum
+  call getSum
 end program main
   

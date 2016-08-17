@@ -21,9 +21,9 @@ MODULE  MyTrigonometricFunctions
   REAL, PARAMETER :: Degree180 = 180.0
   REAL, PARAMETER :: R_to_D    = Degree180/PI
   REAL, PARAMETER :: D_to_R    = PI/Degree180
+  real            :: sum
 
-
-
+  private         :: sum
   !PUBLIC          :: MySIN, MyCOS  , PI, degree180
   !PRIVATE         :: R_to_D, D_to_R
   !PRIVATE         :: RadianToDegree !, DegreeToRadian
@@ -84,4 +84,10 @@ CONTAINS
     MyCOS = COS(DegreeToRadian(x))
   END FUNCTION  MyCOS
 
+  subroutine getSum
+    implicit none
+    sum = sum+sin(pi/6)
+    print*, sum
+  end subroutine getSum
+  
   END MODULE  MyTrigonometricFunctions
