@@ -11,7 +11,7 @@ contains
     ! (a+b)/c
     class(stuff) :: a
     integer,intent(in) :: b,c
-    integer,external :: div
+    integer, external :: div
     call add(a%a,b)
     print *, '(a+b)/c=', div(a%a,c)
   end subroutine calculation
