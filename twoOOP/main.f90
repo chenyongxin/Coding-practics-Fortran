@@ -1,7 +1,11 @@
-! test in the same module to implement two or more
+! 1. test in the same module to implement two or more
 ! objects.
 
-! Yes, it can. 
+! Yes, it can.
+
+! 2. test cross-use two objects in the same module.
+! It must define reference type first than used.
+
 module mod
   implicit none
   type :: a
@@ -12,6 +16,7 @@ module mod
 
   type :: b
      integer :: i
+     type(a) :: a1
    contains
      procedure :: minus => bminus2
   end type b
@@ -36,7 +41,7 @@ program main
   type(a) :: aa 
   type(b) :: bb
   aa = a(3)
-  bb = b(3)
+  bb = b(3, aa)
   print *, aa%plus()
   print *, bb%minus()
 end program main
